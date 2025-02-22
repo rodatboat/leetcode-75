@@ -1,3 +1,5 @@
+package main
+
 func moveZeroes(nums []int) {
 	zero_count := 0
 	writer_idx := 0

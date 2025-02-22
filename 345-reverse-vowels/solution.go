@@ -1,3 +1,5 @@
+package main
+
 import "slices"
 
 func contains(slice []byte, char byte) bool {

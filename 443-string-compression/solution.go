@@ -1,6 +1,7 @@
+package main
+
 import (
 	"strconv"
-	"strings"
 )
 
 func compress(chars []byte) int {

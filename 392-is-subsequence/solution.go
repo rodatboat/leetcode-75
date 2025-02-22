@@ -1,3 +1,5 @@
+package main
+
 func isSubsequence(s string, t string) bool {
 	slen := len(s)
 	tlen := len(t)

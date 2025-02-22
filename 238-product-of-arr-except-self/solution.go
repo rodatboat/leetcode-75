@@ -1,3 +1,5 @@
+package main
+
 func initProdArr(size int) []int {
 	arr := make([]int, size)
 	for idx := range size {

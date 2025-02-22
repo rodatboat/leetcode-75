@@ -1,3 +1,5 @@
+package main
+
 func mergeAlternately(word1 string, word2 string) string {
 	w1l := len(word1)
 	w2l := len(word2)

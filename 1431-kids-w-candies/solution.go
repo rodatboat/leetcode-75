@@ -1,3 +1,5 @@
+package main
+
 func max(arr []int) int {
 	max_val := 0
 	for _, val := range arr {

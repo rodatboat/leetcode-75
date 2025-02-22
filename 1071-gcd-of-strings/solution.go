@@ -1,3 +1,5 @@
+package main
+
 import "strings"
 
 func gcd(a, b int) int {
