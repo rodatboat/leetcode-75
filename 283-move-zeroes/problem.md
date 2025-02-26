@@ -1,29 +1,30 @@
-283. Move Zeroes
-Solved
-Easy
-Topics
-Companies
-Hint
-Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+# 283. Move Zeroes
+## Solved
+### Easy
+
+Topics: 
+Companies: 
+
+Hint: Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.
 
 Note that you must do this in-place without making a copy of the array.
 
- 
+### Examples
 
-Example 1:
+#### Example 1
 
-Input: nums = [0,1,0,3,12]
-Output: [1,3,12,0,0]
-Example 2:
+Input: `nums = [0,1,0,3,12]`
+Output: `[1,3,12,0,0]`
 
-Input: nums = [0]
-Output: [0]
- 
+#### Example 2
 
-Constraints:
+Input: `nums = [0]`
+Output: `[0]`
 
-1 <= nums.length <= 104
--231 <= nums[i] <= 231 - 1
- 
+### Constraints
 
-Follow up: Could you minimize the total number of operations done?
+* `1 <= nums.length <= 10^4`
+* `-2^31 <= nums[i] <= 2^31 - 1`
+
+### Follow up
+Could you minimize the total number of operations done?
