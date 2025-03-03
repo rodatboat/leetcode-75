@@ -36,7 +36,7 @@ func decodeString(s string) string {
 	var stck stack
 	for _, i := range s {
 		if i != ']' {
-			stck = stck.Push(i)
+			stck = append(stck, i)
 		} else {
 			var curr []rune
 			for len(stck) > 0 && *stck.Top() != '[' {
