@@ -1,5 +1,5 @@
 # 2390. Removing Stars From a String
-## Unsolved
+## Solved
 ### Medium
 
 You are given a string `s`, which contains stars `*`.

@@ -1,10 +1,9 @@
 class Solution:
     # Recommended approach uses queue. 
     # Enqueue is append, Dequeue is pop(0)
-
     def senateRound(self, senate: str) -> str:
         queue = [i for i in senate]
-        # bans pending
+        # bans pending counts
         d = 0
         r = 0
         while True:
@@ -23,14 +22,14 @@ class Solution:
                         ban_queue.append(idx)
                         d -= 1
 
+            # if any senators have been banned this round, if not. game is over.
             banned = False
             while ban_queue:
                 banned = True
                 queue.pop(ban_queue.pop())
-            
             if not banned:
                 break
-                
+
         if d > 0:
             return "Dire"
         else:
