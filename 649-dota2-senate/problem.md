@@ -40,8 +40,28 @@ And the second senator can't exercise any rights anymore since his right has bee
 And the third senator comes from Dire and he can ban the first senator's right in round 1.
 And in round 2, the third senator can just announce the victory since he is the only guy in the senate who can vote.
 
+#### Example 3
+
+Input `senate = "DDRRR"`
+
+Output: `"Dire"`
+
+Explanation:
+The first D bans the First R, the second D bans the second R, the third R bans the first D, the second D bans the third R. Read question carefully, this game is round based. After completion of one round there can be possibility that all senate who have rights, not from same team. So for this reason we again check.
+
 ### Constraints
 
 * `n == senate.length`
 * `1 <= n <= 10^4`
 * `senate[i]` is either 'R' or 'D'
+
+
+### Use Commnets:
+
+One strategy that would pass the judge (although not the most efficient) to think about the problem is for the first character in the string to move to the back and eliminate the first "opposing" character in the string. So in the case of "DDRRR":
+
+DDRRR - the first D moves to the back and takes out the first R
+DRRD - the first D moves to the back and takes out the first R
+RDD - the first R moves to the back and takes out the first D
+DR - the first (and only) D moves to the back and takes out the first (and only) R
+D - D wins the vote.
