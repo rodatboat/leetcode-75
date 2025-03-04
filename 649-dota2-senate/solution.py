@@ -1,47 +1,28 @@
+from collections import deque
+
 class Solution:
-    # Recommended approach uses queue. 
-    # Enqueue is append, Dequeue is pop(0)
-    def senateRound(self, senate: str) -> str:
-        queue = [i for i in senate]
-        # bans pending counts
-        d = 0
-        r = 0
-        while True:
-            ban_queue = []
-            for idx, i in enumerate(queue):
-                if i == 'D':
-                    if r == 0:
-                        d += 1
-                    else:
-                        ban_queue.append(idx)
-                        r -= 1
-                else:
-                    if d == 0:
-                        r += 1
-                    else:
-                        ban_queue.append(idx)
-                        d -= 1
+    # Recommended approach uses queue. Use 'deque' for O(1) dequeue using popleft()
+    def predictPartyVictory(self, senate: str) -> str:
+        n = len(senate)
+        r = deque()
+        d = deque()
 
-            # if any senators have been banned this round, if not. game is over.
-            banned = False
-            while ban_queue:
-                banned = True
-                queue.pop(ban_queue.pop())
-            if not banned:
-                break
+        # store all the senators into their respective party's queue, but store their indexes, the count is length of queue
+        for idx, i in enumerate(senate):
+            if i == 'D':
+                d.append(idx)
+            else:
+                r.append(idx)
 
-        if d > 0:
-            return "Dire"
-        else:
-            return "Radiant"
+        # loop until one of the queues is empty
+        while r and d:
+            r_idx = r.popleft()
+            d_idx = d.popleft()
+            # check which senator's index is smaller (aka which comes first in the line, and takes priority)
+            if r_idx < d_idx:
+                # if rad goes first, add it to the back of the queue, and the dire that lost the condition stays out...
+                r.append(r_idx + n)
+            else:
+                d.append(d_idx + n)
         
-
-s = Solution()
-
-test1 = "RD" # Radiant
-test2 = "RDD" # Dire
-test3 = "DDRRR" # Dire
-
-print(s.senateRound(test1))
-print(s.senateRound(test2))
-print(s.senateRound(test3))
+        return "Radiant" if r else "Dire"
