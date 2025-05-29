@@ -1,5 +1,9 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        sArr = [i for i in s.split(" ") if i.strip()]
-        sArr.reverse()
-        return ' '.join(sArr)
+        a = s.split()
+        rev = []
+        for i in range(len(a)):
+            rev.append(a[i])
+            if i > 0:
+                rev.append("")
+        return " ".join(reversed(a))
