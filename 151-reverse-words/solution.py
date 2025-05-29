@@ -2,8 +2,6 @@ class Solution:
     def reverseWords(self, s: str) -> str:
         a = s.split()
         rev = []
-        for i in range(len(a)):
+        for i in range(len(a)-1, -1, -1):
             rev.append(a[i])
-            if i > 0:
-                rev.append("")
-        return " ".join(reversed(a))
+        return " ".join(rev)
